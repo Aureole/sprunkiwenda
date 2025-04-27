@@ -1,7 +1,7 @@
 {
   "name": "SprunkiWenda.org",
   "baseUrl": "https://sprunkiwenda.org",
-  "cdnBaseUrl": "https://game.sprunka.org",
+  "cdnBaseUrl": "https://game.sprunkiwenda.org",
   "googleAnalyticsId": "G-T5ZXKTSHBD",
   "microsoftClarityId": "rahuv2gc8i"
 }
