@@ -1,5 +1,6 @@
 import { type GameBaseConfig, type SiteConfig } from "./types";
-import { browser } from "$app/environment";
+
+const test = false;
 
 export function getCoverUrl(site: SiteConfig, config: GameBaseConfig) {
   if (config.imageId === undefined) {
@@ -11,7 +12,7 @@ export function getCoverUrl(site: SiteConfig, config: GameBaseConfig) {
 
 export function getGameUrl(site: SiteConfig, config: GameBaseConfig) {
   let baseUrl = site.baseUrl;
-  if (browser && window.location.hostname === "localhost") {
+  if (test) {
     baseUrl = `http://${window.location.hostname}:${window.location.port}`;
   }
   if (config.routeId === undefined) {
@@ -23,7 +24,7 @@ export function getGameUrl(site: SiteConfig, config: GameBaseConfig) {
 
 export function getGameFrameUrl(site: SiteConfig, config: GameBaseConfig) {
   let baseUrl = site.baseUrl;
-  if (browser && window.location.hostname === "localhost") {
+  if (test) {
     baseUrl = `http://${window.location.hostname}:${window.location.port}`;
   }
   return `${baseUrl}/games/${config.id}`;
