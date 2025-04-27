@@ -1,4 +1,5 @@
 import { type GameBaseConfig, type SiteConfig } from "./types";
+import { browser } from "$app/environment";
 
 export function getCoverUrl(site: SiteConfig, config: GameBaseConfig) {
   if (config.imageId === undefined) {
@@ -9,10 +10,15 @@ export function getCoverUrl(site: SiteConfig, config: GameBaseConfig) {
 }
 
 export function getGameUrl(site: SiteConfig, config: GameBaseConfig) {
+  // if testing in local environment, use the local URL
+  let baseUrl = site.baseUrl;
+  if (browser && window.location.hostname === "localhost") {
+    baseUrl = "http://localhost:5174";
+  }
   if (config.routeId === undefined) {
-    return `${site.baseUrl}/${config.id}`;
+    return `${baseUrl}/${config.id}`;
   } else {
-    return `${site.baseUrl}/${config.routeId}`;
+    return `${baseUrl}/${config.routeId}`;
   }
 }
 

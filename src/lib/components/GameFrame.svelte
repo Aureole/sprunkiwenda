@@ -95,7 +95,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: #111;
+    background-color: var(--color-black);
     overflow: hidden;
     flex-grow: 1;
   }
@@ -122,7 +122,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(12, 235, 235, 0.3), rgba(32, 227, 178, 0.3));
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.3), rgba(165, 16, 48, 0.3));
   }
 
   .game-preview-content {
@@ -141,9 +141,9 @@
     padding: 5% 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    color: white;
-    background: linear-gradient(to right, rgba(0,0,0,0.7) 60%, transparent);
+    justify-content: center;
+    color: var(--color-white);
+    background: linear-gradient(to right, rgba(18, 18, 18, 0.7) 60%, transparent);
     z-index: 3;
   }
 
@@ -152,12 +152,12 @@
   }
 
   .game-title {
-    font-size: min(4rem, 8vw); /* Responsive font size */
+    font-size: min(4rem, 8vw);
     line-height: 1.1;
     margin: 0;
     font-weight: 800;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, #fff, #f0f0f0);
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textShine 3s ease-in-out infinite alternate;
@@ -169,31 +169,32 @@
   }
 
   .game-subtitle {
-    font-size: clamp(1rem, 2vw, 1.3rem); /* Responsive font size */
+    font-size: clamp(1rem, 2vw, 1.3rem);
     margin: 1rem 0 0;
     opacity: 0.9;
     max-width: 80%;
     font-weight: 400;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: var(--color-light-gray);
   }
 
   /* Larger play button styles */
   .play-button {
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     border: none;
-    color: white;
+    color: var(--color-white);
     padding: 0;
     font-weight: 700;
-    border-radius: 50px;
+    border-radius: var(--radius-round);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.5);
+    transition: var(--transition-bounce);
+    box-shadow: 0 10px 25px rgba(220, 20, 60, 0.5);
     align-self: flex-start;
     overflow: hidden;
     margin-top: 2rem;
-    position: relative; /* For hover effect */
+    position: relative;
     transform: scale(1.15);
     transform-origin: center center;
   }
@@ -205,7 +206,7 @@
     width: clamp(60px, 6vw, 85px);
     height: clamp(60px, 6vw, 85px);
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     margin-right: 10px;
   }
 
@@ -224,7 +225,8 @@
 
   .play-button:hover {
     transform: translateY(-5px) scale(1.17);
-    box-shadow: 0 15px 30px rgba(12, 235, 235, 0.7);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.7);
+    background: var(--gradient-crimson-hover);
   }
 
   .play-button:active {
@@ -257,9 +259,9 @@
 
   .preview-circle {
     position: relative;
-    width: min(220px, 20vw); /* Responsive size */
-    height: min(220px, 20vw); /* Responsive size */
-    border-radius: 50%;
+    width: min(220px, 20vw);
+    height: min(220px, 20vw);
+    border-radius: var(--radius-circle);
     overflow: hidden;
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 30px rgba(0, 0, 0, 0.3);
     background-size: cover;
@@ -276,7 +278,7 @@
 
   .circle-decoration {
     position: absolute;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     opacity: 0.6;
     z-index: 2;
   }
@@ -284,7 +286,7 @@
   .circle-1 {
     width: clamp(40px, 4vw, 60px);
     height: clamp(40px, 4vw, 60px);
-    background: linear-gradient(45deg, #0cebeb, #20e3b2);
+    background: linear-gradient(45deg, var(--color-crimson), var(--color-crimson-dark));
     top: 20%;
     right: 15%;
     animation: float 6s ease-in-out infinite;
@@ -293,7 +295,7 @@
   .circle-2 {
     width: clamp(30px, 3vw, 40px);
     height: clamp(30px, 3vw, 40px);
-    background: linear-gradient(45deg, #20e3b2, #0cebeb);
+    background: linear-gradient(45deg, var(--color-crimson-dark), var(--color-crimson));
     bottom: 20%;
     right: 25%;
     animation: float 7s ease-in-out infinite 1s;
@@ -302,7 +304,7 @@
   .circle-3 {
     width: clamp(20px, 2vw, 25px);
     height: clamp(20px, 2vw, 25px);
-    background: linear-gradient(45deg, #20e3b2, #0dcfcf);
+    background: linear-gradient(45deg, var(--color-crimson-dark), var(--color-crimson-light));
     top: 40%;
     right: 30%;
     animation: float 5s ease-in-out infinite 0.5s;
@@ -318,9 +320,9 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: #000;
+    background-color: var(--color-black);
     flex-grow: 1;
-    overflow: hidden; /* Prevent overflow issues */
+    overflow: hidden;
   }
   
   .game-iframe {
@@ -368,7 +370,7 @@
       text-align: center;
       align-items: center;
       width: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.5) 70%, transparent);
+      background: linear-gradient(to bottom, rgba(18, 18, 18, 0.8) 30%, rgba(18, 18, 18, 0.5) 70%, transparent);
       justify-content: flex-start;
     }
     
@@ -376,7 +378,7 @@
       margin-bottom: 1.5rem;
       margin-top: 2rem;
       position: relative;
-      z-index: 10; /* Ensure title appears above the circle */
+      z-index: 10;
     }
 
     .game-title {
@@ -401,7 +403,7 @@
       height: min(150px, 30vw);
       margin-top: 0;
       transform: translateY(5vh);
-      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(12, 235, 235, 0.5);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(220, 20, 60, 0.5);
     }
     
     .circle-1 {
@@ -423,7 +425,7 @@
     .play-button {
       margin-top: 0;
       position: absolute;
-      bottom: clamp(3.5rem, 15vh, 7rem); /* Increased bottom margin to move button up */
+      bottom: clamp(3.5rem, 15vh, 7rem);
       left: 50%;
       transform: translateX(-50%) scale(1.15);
       z-index: 5;
@@ -458,11 +460,11 @@
   /* Small phones */
   @media (max-width: 480px) {
     .game-info {
-      padding: 2rem 1rem;
+      padding: var(--space-lg) var(--space-sm);
     }
     
     .title-container {
-      margin-bottom: 1rem;
+      margin-bottom: var(--space-sm);
       margin-top: 1.5rem;
     }
     
@@ -473,13 +475,13 @@
     .preview-circle {
       width: min(110px, 30vw);
       height: min(110px, 30vw);
-      transform: translateY(-2vh); /* Moved circle up slightly */
-      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(12, 235, 235, 0.5);
+      transform: translateY(-2vh);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(220, 20, 60, 0.5);
     }
     
     /* Improved centering for small screens */
     .play-button {
-      bottom: clamp(3rem, 12vh, 5rem); /* Increased bottom margin to move button up */
+      bottom: clamp(3rem, 12vh, 5rem);
       transform: translateX(-50%) scale(1.1);
       min-width: 180px;
       left: 50%;
@@ -524,14 +526,13 @@
   }
   
   /* Very small phones or landscape mode on small phones */
-  @media (max-height: 560px) and (orientation: landscape)  {
+  @media (max-height: 560px) and (orientation: landscape) {
     .preview-circle {
-      transform: translateY(-1vh); /* Moved circle slightly up */
+      transform: translateY(-1vh);
     }
-
     
     .play-button {
-      bottom: clamp(2rem, 8vh, 3rem); /* Increased bottom margin for very small screens */
+      bottom: clamp(2rem, 8vh, 3rem);
       transform: translateX(-50%) scale(1.05);
     }
     
@@ -544,7 +545,7 @@
     }
     
     .title-container {
-      margin-top: 1rem;
+      margin-top: var(--space-sm);
       margin-bottom: 0.5rem;
     }
     
