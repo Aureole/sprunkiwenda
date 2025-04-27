@@ -529,7 +529,6 @@
       transform: translateY(-1vh); /* Moved circle slightly up */
     }
 
-    
     .play-button {
       bottom: clamp(2rem, 8vh, 3rem); /* Increased bottom margin for very small screens */
       transform: translateX(-50%) scale(1.05);
@@ -546,6 +545,11 @@
     .title-container {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
+    }
+    
+    /* Reduced title font size for landscape mode */
+    .game-title {
+      font-size: min(2.2rem, 7vw);
     }
     
     /* Keep button reasonably sized in landscape mode */
