@@ -39,4 +39,34 @@
   --radius-lg: 24px;
   --radius-round: 50px;
   --radius-circle: 50%;
+  
+  /* NEW VARIABLES */
+  /* Overlay Colors */
+  --overlay-dark: rgba(18, 18, 18, 0.7);
+  --overlay-dark-gradient: linear-gradient(to right, rgba(18, 18, 18, 0.7) 60%, transparent);
+  --overlay-dark-mobile: linear-gradient(to bottom, rgba(18, 18, 18, 0.8) 30%, rgba(18, 18, 18, 0.5) 70%, transparent);
+  --overlay-accent: linear-gradient(135deg, rgba(220, 20, 60, 0.3), rgba(165, 16, 48, 0.3));
+  
+  /* Buttons */
+  --button-play-shadow: 0 10px 25px rgba(220, 20, 60, 0.5);
+  --button-play-shadow-hover: 0 15px 30px rgba(220, 20, 60, 0.7);
+  --button-icon-bg: rgba(255, 255, 255, 0.2);
+  --button-hover-overlay: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+  
+  /* Decorative Elements */
+  --circle-border: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 30px rgba(0, 0, 0, 0.3);
+  --circle-mobile-border: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(220, 20, 60, 0.5);
+  --circle-small-mobile-border: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(220, 20, 60, 0.5);
+  
+  /* Effects */
+  --blur-amount: 30px;
+  --text-shadow-title: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  --text-shadow-subtitle: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
+  /* Animation */
+  --animation-pulse: pulse 4s ease-in-out infinite;
+  --animation-float-1: float 6s ease-in-out infinite;
+  --animation-float-2: float 7s ease-in-out infinite 1s;
+  --animation-float-3: float 5s ease-in-out infinite 0.5s;
+  --animation-text-shine: textShine 3s ease-in-out infinite alternate;
 }
