@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/styles/theme.css";
   import config from '$lib/data/footer.json';
 </script>
 
@@ -40,13 +41,13 @@
 
 <style>
   .footer-container {
-    background: linear-gradient(to bottom, #fcfcfc, #f7f7f7);
+    background: var(--gradient-background);
     padding: 3rem 0 2rem;
     margin-top: 4rem;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid var(--color-border-light);
     position: relative;
   }
-  
+
   .footer-container:before {
     content: '';
     position: absolute;
@@ -54,7 +55,7 @@
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, #0cebeb, #20e3b2, #0cebeb, #20e3b2);
+    background: var(--gradient-footer);
     opacity: 0.7;
   }
 
@@ -71,7 +72,7 @@
     align-items: center;
     gap: 1.2rem;
     padding-top: 2rem;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--color-border-lighter);
     margin-top: 2rem;
   }
 
@@ -83,7 +84,7 @@
   }
 
   .footer-link {
-    color: #444;
+    color: var(--color-text-secondary);
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 0.95rem;
@@ -92,9 +93,9 @@
   }
 
   .footer-link:hover {
-    color: #0cebeb;
+    color: var(--color-primary);
   }
-  
+
   .footer-link:after {
     content: '';
     position: absolute;
@@ -102,17 +103,17 @@
     height: 2px;
     bottom: -4px;
     left: 0;
-    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 2px;
   }
-  
+
   .footer-link:hover:after {
     width: 100%;
   }
 
   .footer-copyright {
-    color: #777;
+    color: var(--color-text-light);
     font-size: 0.85rem;
     text-align: center;
     margin-top: 0.5rem;
@@ -128,12 +129,12 @@
   .game-section-title {
     margin: 0 0 1.2rem 0;
     font-size: 1.15rem;
-    color: #333;
+    color: var(--color-text-primary);
     position: relative;
     padding-bottom: 0.7rem;
     font-weight: 600;
   }
-  
+
   .game-section-title:after {
     content: '';
     position: absolute;
@@ -141,11 +142,11 @@
     height: 4px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     border-radius: 4px;
     transition: width 0.3s ease;
   }
-  
+
   .game-link-section:hover .game-section-title:after {
     width: 65px;
   }
@@ -160,18 +161,18 @@
   }
 
   .game-link {
-    color: #555;
+    color: var(--color-text-tertiary);
     text-decoration: none;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 0.95rem;
     display: flex;
     align-items: center;
   }
-  
+
   .game-link-dot {
     width: 8px;
     height: 8px;
-    background: linear-gradient(45deg, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     border-radius: 50%;
     margin-right: 10px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -179,14 +180,14 @@
   }
 
   .game-link:hover {
-    color: #0cebeb;
+    color: var(--color-primary);
     transform: translateX(5px);
   }
-  
+
   .game-link:hover .game-link-dot {
     opacity: 1;
     transform: scale(1.3);
-    box-shadow: 0 0 10px rgba(12, 235, 235, 0.5);
+    box-shadow: 0 0 10px var(--color-primary-light);
   }
 
   @media screen and (min-width: 1801px) {
@@ -235,7 +236,7 @@
       align-items: center;
     }
   }
-  
+
   /* Animation for footer appearance */
   @keyframes fadeInUp {
     from {
@@ -247,7 +248,7 @@
       transform: translateY(0);
     }
   }
-  
+
   .footer-container {
     animation: fadeInUp 0.8s ease-out;
   }

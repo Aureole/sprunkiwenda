@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/styles/theme.css";
   import { onMount } from 'svelte';
   import SvelteMarkdown from 'svelte-markdown';
   import Header from './Header.svelte';

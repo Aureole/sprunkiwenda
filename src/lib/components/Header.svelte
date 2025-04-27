@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/styles/theme.css";
   import { onMount } from 'svelte';
   import config from '$lib/data/header.json';
   
@@ -120,12 +121,12 @@
 <style>
   .header-container {
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background-color: var(--color-background-primary);
+    box-shadow: 0 8px 20px var(--color-shadow-primary);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(12, 235, 235, 0.1);
+    border-bottom: 1px solid var(--color-primary-lightest);
   }
 
   .header-content {
@@ -146,7 +147,7 @@
     animation: fadeIn 0.5s ease forwards;
     gap: 12px;
   }
-  
+
   .logo-link:hover {
     transform: scale(1.05);
   }
@@ -159,14 +160,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.15);
+    background-color: var(--color-background-primary);
+    box-shadow: 0 3px 10px var(--color-primary-light);
     border: 2px solid rgba(12, 235, 235, 0.2);
     transition: all 0.3s ease;
   }
-  
+
   .logo-container:hover {
-    box-shadow: 0 5px 15px rgba(12, 235, 235, 0.25);
+    box-shadow: 0 5px 15px var(--color-primary-light);
     border-color: rgba(12, 235, 235, 0.4);
   }
 
@@ -185,9 +186,9 @@
   .title-text {
     font-size: 1.35rem;
     font-weight: 700;
-    color: #333;
+    color: var(--color-text-primary);
     letter-spacing: 0.01em;
-    background: linear-gradient(135deg, #333 0%, #0cebeb 100%);
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -217,7 +218,7 @@
     margin: 0;
     animation: fadeIn 0.5s ease forwards;
   }
-  
+
   .nav-list > :nth-child(1) { animation-delay: 0.1s; }
   .nav-list > :nth-child(2) { animation-delay: 0.2s; }
   .nav-list > :nth-child(3) { animation-delay: 0.3s; }
@@ -226,7 +227,7 @@
 
   .nav-link {
     text-decoration: none;
-    color: #333;
+    color: var(--color-text-primary);
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.25s ease;
@@ -245,7 +246,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(12, 235, 235, 0.12), rgba(32, 227, 178, 0.15));
+    background: var(--gradient-nav-link);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -254,10 +255,10 @@
   }
 
   .nav-link:hover {
-    color: #0cebeb;
-    text-shadow: 0 1px 2px rgba(12, 235, 235, 0.1);
+    color: var(--color-primary);
+    text-shadow: 0 1px 2px var(--color-primary-lightest);
   }
-  
+
   .nav-link:hover:before {
     transform: scaleX(1);
     transform-origin: left;
@@ -282,10 +283,10 @@
     height: 2px;
     width: 100%;
     border-radius: 10px;
-    background: #333;
+    background: var(--color-text-primary);
     transition: all 0.3s ease-in-out;
   }
-  
+
   /* Empty spacer to maintain layout */
   .spacer {
     width: 30px; /* Same as hamburger button width */
@@ -299,7 +300,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--color-overlay);
     z-index: 101;
     animation: fadeIn 0.3s ease forwards;
   }
@@ -310,8 +311,8 @@
     left: -320px;
     width: 280px;
     height: 100%;
-    background-color: #fff;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-background-primary);
+    box-shadow: 2px 0 10px var(--color-shadow-tertiary);
     z-index: 102;
     padding: 2rem 1rem;
     transition: left 0.3s ease-in-out;
@@ -329,7 +330,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: var(--color-text-primary);
     padding: 0.5rem;
     display: flex;
     align-items: center;
@@ -363,7 +364,7 @@
     display: block;
     padding: 0.75rem 1rem;
     text-decoration: none;
-    color: #333;
+    color: var(--color-text-primary);
     font-weight: 600;
     border-radius: 8px;
     transition: all 0.25s ease;
@@ -375,10 +376,10 @@
   }
 
   .sidebar-nav-link:hover {
-    color: #0cebeb;
-    background-color: rgba(12, 235, 235, 0.08);
+    color: var(--color-primary);
+    background-color: var(--color-primary-lightest);
     padding-left: 1.5rem;
-    text-shadow: 0 1px 2px rgba(12, 235, 235, 0.1);
+    text-shadow: 0 1px 2px var(--color-primary-lightest);
   }
 
   /* Media Queries */
@@ -438,7 +439,7 @@
 
   @media (orientation: landscape) and (max-height: 560px) {
     .header-container {
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 10px var(--color-shadow-tertiary);
     }
     
     .header-content {
@@ -464,13 +465,13 @@
       height: 1.5px;
     }
   }
-  
+
   /* Animations */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-15px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  
+
   @keyframes slideInRight {
     from { opacity: 0; transform: translateX(-20px); }
     to { opacity: 1; transform: translateX(0); }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/styles/theme.css";
   import { onMount } from 'svelte';
   import { type GameConfig } from '$lib/types';
   import siteConfig from '$lib/data/site.json';
@@ -170,7 +171,7 @@
     border-radius: 24px;
     overflow: hidden;
     background-color: #111;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px var(--color-shadow-secondary), 0 5px 15px var(--color-shadow-primary);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -280,7 +281,7 @@
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px var(--color-shadow-secondary);
     border: 2px solid rgba(255, 255, 255, 0.2);
   }
 
@@ -316,8 +317,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(12, 235, 235, 0.2);
-    border: 1px solid rgba(12, 235, 235, 0.3);
+    background-color: var(--color-primary-light);
+    border: 1px solid var(--color-primary-lighter);
     color: white;
     cursor: pointer;
     padding: 0.6rem 1.2rem;
@@ -343,7 +344,7 @@
   }
 
   .fullscreen-button:hover {
-    background-color: rgba(12, 235, 235, 0.4);
+    background-color: var(--color-primary-lighter);
     transform: translateY(-2px);
   }
   
@@ -386,7 +387,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: var(--color-overlay);
       color: white;
       padding: 8px 16px;
       border-radius: 20px;

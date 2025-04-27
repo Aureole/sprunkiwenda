@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/styles/theme.css";
   import SvelteMarkdown from 'svelte-markdown'
   
   export let instructions: string;
@@ -12,13 +13,12 @@
     <SvelteMarkdown source={instructions} />
   </div>
 </div>
-
 <style>
   .instructions-container {
-    background-color: white;
+    background-color: var(--color-background-primary);
     border-radius: 24px;
     padding: 2rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px var(--color-shadow-secondary), 0 5px 15px var(--color-shadow-primary);
     margin: 2rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
@@ -32,14 +32,14 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
   }
 
   .instructions-title {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0 0 1.5rem 0;
-    color: #333;
+    color: var(--color-text-primary);
     position: relative;
     padding-left: 1.2rem;
     display: inline-block;
@@ -53,14 +53,14 @@
     transform: translateY(-50%);
     width: 6px;
     height: 1.2em;
-    background: linear-gradient(to bottom, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.4);
+    box-shadow: 0 3px 10px var(--color-primary-light);
   }
 
   .instructions-content {
     line-height: 1.7;
-    color: #444;
+    color: var(--color-text-secondary);
     font-size: 1.05rem;
     max-width: 100%;
   }
@@ -71,7 +71,7 @@
   .instructions-content :global(h4),
   .instructions-content :global(h5),
   .instructions-content :global(h6) {
-    color: #333;
+    color: var(--color-text-primary);
     margin-top: 1.8em;
     margin-bottom: 0.8em;
     font-weight: 700;
@@ -79,7 +79,7 @@
 
   .instructions-content :global(h1) {
     font-size: 1.8rem;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -97,7 +97,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     border-radius: 3px;
   }
 
@@ -120,14 +120,14 @@
   }
   
   .instructions-content :global(li::marker) {
-    color: #0cebeb;
+    color: var(--color-primary);
   }
 
   .instructions-content :global(img) {
     max-width: 100%;
     border-radius: 12px;
     margin: 1.5rem 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--color-shadow-primary);
     transition: transform 0.3s ease;
   }
   
@@ -136,30 +136,30 @@
   }
 
   .instructions-content :global(code) {
-    background-color: #f0fffd;
+    background-color: var(--color-background-code);
     padding: 0.2em 0.4em;
     border-radius: 4px;
     font-family: monospace;
     font-size: 0.95em;
-    color: #0cac9e;
+    color: var(--color-primary-dark);
   }
 
   .instructions-content :global(pre) {
-    background-color: #f5f5f5;
+    background-color: var(--color-background-tertiary);
     padding: 1.2rem;
     border-radius: 12px;
     overflow-x: auto;
     margin: 1.2rem 0;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--color-border-input);
   }
 
   .instructions-content :global(blockquote) {
-    border-left: 5px solid #0cebeb;
+    border-left: 5px solid var(--color-primary);
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
-    color: #555;
+    color: var(--color-text-tertiary);
     font-style: italic;
-    background-color: #f0fffd;
+    background-color: var(--color-background-code);
     border-radius: 0 12px 12px 0;
   }
 
@@ -169,24 +169,24 @@
     margin: 1.5rem 0;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--color-shadow-primary);
   }
 
   .instructions-content :global(th),
   .instructions-content :global(td) {
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border-light);
     padding: 0.8rem 1rem;
     text-align: left;
   }
 
   .instructions-content :global(th) {
-    background: linear-gradient(to right, rgba(12, 235, 235, 0.3), rgba(32, 227, 178, 0.2));
-    color: #333;
+    background: linear-gradient(to right, var(--color-primary-light), var(--color-secondary-light));
+    color: var(--color-text-primary);
     font-weight: 600;
   }
   
   .instructions-content :global(tr:nth-child(even)) {
-    background-color: #f9f9f9;
+    background-color: var(--color-background-tertiary);
   }
 
   @media screen and (min-width: 1801px) {

@@ -1,72 +1,47 @@
 :root {
-  /* Brand Colors */
-  --brand-primary: #DC143C;
-  --brand-primary-dark: #A51030;
-  --brand-primary-light: #FF3358;
+  /* Primary colors */
+  --color-primary: #0cebeb;
+  --color-primary-light: rgba(12, 235, 235, 0.15);
+  --color-primary-lighter: rgba(12, 235, 235, 0.1);
+  --color-primary-lightest: rgba(12, 235, 235, 0.08);
+  --color-primary-dark: #0cac9e;
   
-  /* Surface Colors */
-  --surface-dark: #121212;
-  --surface-medium: #1E1E1E;
-  --surface-light: #333333;
-  --text-secondary: #E0E0E0;
-  --text-primary: #F5F5F5;
+  /* Secondary colors */
+  --color-secondary: #20e3b2;
+  --color-secondary-light: rgba(32, 227, 178, 0.15);
+  --color-secondary-lighter: rgba(32, 227, 178, 0.3);
   
-  /* Gradients */
-  --gradient-primary: linear-gradient(to right, var(--brand-primary-dark), var(--brand-primary));
-  --gradient-primary-hover: linear-gradient(to right, var(--brand-primary), var(--brand-primary-light));
-  --gradient-text-highlight: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-primary) 100%);
+  /* Background colors */
+  --color-background-primary: #fff;
+  --color-background-secondary: #f0f2f5;
+  --color-background-tertiary: #f9f9f9;
+  --color-background-code: #f0fffd;
   
-  /* Effects */
-  --shadow-primary: 0 3px 10px rgba(220, 20, 60, 0.3);
-  --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.2);
-  --shadow-large: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* Text colors */
+  --color-text-primary: #333;
+  --color-text-secondary: #444;
+  --color-text-tertiary: #555;
+  --color-text-light: #777;
   
-  /* Animation */
-  --transition-fast: all 0.2s ease;
-  --transition-medium: all 0.3s ease;
-  --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Border colors */
+  --color-border-light: #eaeaea;
+  --color-border-lighter: #e5e5e5;
+  --color-border-input: #e0e0e0;
   
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
+  /* Shadow colors */
+  --color-shadow-primary: rgba(0, 0, 0, 0.08);
+  --color-shadow-secondary: rgba(0, 0, 0, 0.1);
+  --color-shadow-tertiary: rgba(0, 0, 0, 0.05);
   
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-round: 50px;
-  --radius-circle: 50%;
+  /* Overlay colors */
+  --color-overlay: rgba(0, 0, 0, 0.5);
   
-  /* NEW VARIABLES */
-  /* Overlay Colors */
-  --overlay-dark: rgba(18, 18, 18, 0.7);
-  --overlay-dark-gradient: linear-gradient(to right, rgba(18, 18, 18, 0.7) 60%, transparent);
-  --overlay-dark-mobile: linear-gradient(to bottom, rgba(18, 18, 18, 0.8) 30%, rgba(18, 18, 18, 0.5) 70%, transparent);
-  --overlay-accent: linear-gradient(135deg, rgba(220, 20, 60, 0.3), rgba(165, 16, 48, 0.3));
-  
-  /* Buttons */
-  --button-primary-shadow: 0 10px 25px rgba(220, 20, 60, 0.5);
-  --button-primary-shadow-hover: 0 15px 30px rgba(220, 20, 60, 0.7);
-  --button-icon-background: rgba(255, 255, 255, 0.2);
-  --button-hover-effect: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
-  
-  /* Decorative Elements */
-  --element-border-glow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 30px rgba(0, 0, 0, 0.3);
-  --element-border-mobile: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(220, 20, 60, 0.5);
-  --element-border-small-mobile: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(220, 20, 60, 0.5);
-  
-  /* Effects */
-  --blur-amount: 30px;
-  --text-shadow-large: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  --text-shadow-small: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  
-  /* Animation */
-  --animation-pulse: pulse 4s ease-in-out infinite;
-  --animation-float-1: float 6s ease-in-out infinite;
-  --animation-float-2: float 7s ease-in-out infinite 1s;
-  --animation-float-3: float 5s ease-in-out infinite 0.5s;
-  --animation-text-shine: textShine 3s ease-in-out infinite alternate;
+  /* Primary gradient */
+  --gradient-primary: linear-gradient(to right, #0cebeb, #20e3b2);
+  --gradient-primary-hover: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+  --gradient-primary-transparent: linear-gradient(to right, rgba(12, 235, 235, 0.4), rgba(12, 235, 235, 0.1));
+  --gradient-background: linear-gradient(135deg, #f8f9fa, #f0f2f5);
+  --gradient-text: linear-gradient(135deg, #333 0%, #0cebeb 100%);
+  --gradient-nav-link: linear-gradient(90deg, rgba(12, 235, 235, 0.12), rgba(32, 227, 178, 0.15));
+  --gradient-footer: linear-gradient(90deg, #0cebeb, #20e3b2, #0cebeb, #20e3b2);
 }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "$lib/styles/theme.css";
   import type { GameBaseConfig } from "$lib/types";
   import siteConfig from "$lib/data/site.json";
   import { getCoverUrl, getIframeUrl } from "$lib/helper";
@@ -121,7 +122,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(12, 235, 235, 0.3), rgba(32, 227, 178, 0.3));
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
   }
 
   .game-preview-content {
@@ -180,7 +181,7 @@
   .play-button {
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     border: none;
     color: white;
     padding: 0;
@@ -188,7 +189,7 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.5);
+    box-shadow: 0 10px 25px var(--color-primary-light);
     align-self: flex-start;
     overflow: hidden;
     margin-top: 2rem;
@@ -223,7 +224,7 @@
 
   .play-button:hover {
     transform: translateY(-5px) scale(1.17);
-    box-shadow: 0 15px 30px rgba(12, 235, 235, 0.7);
+    box-shadow: 0 15px 30px var(--color-primary-light);
   }
 
   .play-button:active {
@@ -237,7 +238,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    background: var(--gradient-primary-hover);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -283,7 +284,7 @@
   .circle-1 {
     width: clamp(40px, 4vw, 60px);
     height: clamp(40px, 4vw, 60px);
-    background: linear-gradient(45deg, #0cebeb, #20e3b2);
+    background: var(--gradient-primary);
     top: 20%;
     right: 15%;
     animation: float 6s ease-in-out infinite;
@@ -292,7 +293,7 @@
   .circle-2 {
     width: clamp(30px, 3vw, 40px);
     height: clamp(30px, 3vw, 40px);
-    background: linear-gradient(45deg, #20e3b2, #0cebeb);
+    background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
     bottom: 20%;
     right: 25%;
     animation: float 7s ease-in-out infinite 1s;
@@ -301,7 +302,7 @@
   .circle-3 {
     width: clamp(20px, 2vw, 25px);
     height: clamp(20px, 2vw, 25px);
-    background: linear-gradient(45deg, #20e3b2, #0dcfcf);
+    background: linear-gradient(45deg, var(--color-secondary), var(--color-primary-dark));
     top: 40%;
     right: 30%;
     animation: float 5s ease-in-out infinite 0.5s;
@@ -400,7 +401,7 @@
       height: min(150px, 30vw);
       margin-top: 0;
       transform: translateY(5vh);
-      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(12, 235, 235, 0.5);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px var(--color-primary-light);
     }
     
     .circle-1 {
@@ -473,7 +474,7 @@
       width: min(110px, 30vw);
       height: min(110px, 30vw);
       transform: translateY(-2vh); /* Moved circle up slightly */
-      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(12, 235, 235, 0.5);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px var(--color-primary-light);
     }
     
     /* Improved centering for small screens */
