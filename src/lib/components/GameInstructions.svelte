@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '$lib/styles/theme.css';
   import SvelteMarkdown from 'svelte-markdown'
   
   export let instructions: string;
@@ -16,12 +15,12 @@
 
 <style>
   .instructions-container {
-    background-color: var(--color-black);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
-    box-shadow: var(--shadow-large);
-    margin: var(--space-lg) 0;
-    border: 1px solid rgba(220, 20, 60, 0.2);
+    background-color: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
   }
@@ -33,14 +32,14 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
   }
 
   .instructions-title {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0 0 1.5rem 0;
-    color: var(--color-white);
+    color: #333;
     position: relative;
     padding-left: 1.2rem;
     display: inline-block;
@@ -54,14 +53,14 @@
     transform: translateY(-50%);
     width: 6px;
     height: 1.2em;
-    background: linear-gradient(to bottom, var(--color-crimson-dark), var(--color-crimson));
+    background: linear-gradient(to bottom, #0cebeb, #20e3b2);
     border-radius: 6px;
-    box-shadow: var(--shadow-small);
+    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.4);
   }
 
   .instructions-content {
     line-height: 1.7;
-    color: var(--color-light-gray);
+    color: #444;
     font-size: 1.05rem;
     max-width: 100%;
   }
@@ -72,7 +71,7 @@
   .instructions-content :global(h4),
   .instructions-content :global(h5),
   .instructions-content :global(h6) {
-    color: var(--color-white);
+    color: #333;
     margin-top: 1.8em;
     margin-bottom: 0.8em;
     font-weight: 700;
@@ -80,7 +79,7 @@
 
   .instructions-content :global(h1) {
     font-size: 1.8rem;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -98,7 +97,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
     border-radius: 3px;
   }
 
@@ -121,15 +120,15 @@
   }
   
   .instructions-content :global(li::marker) {
-    color: var(--color-crimson);
+    color: #0cebeb;
   }
 
   .instructions-content :global(img) {
     max-width: 100%;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     margin: 1.5rem 0;
-    box-shadow: var(--shadow-medium);
-    transition: var(--transition-medium);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
   
   .instructions-content :global(img:hover) {
@@ -137,57 +136,57 @@
   }
 
   .instructions-content :global(code) {
-    background-color: rgba(220, 20, 60, 0.1);
+    background-color: #f0fffd;
     padding: 0.2em 0.4em;
     border-radius: 4px;
     font-family: monospace;
     font-size: 0.95em;
-    color: var(--color-crimson);
+    color: #0cac9e;
   }
 
   .instructions-content :global(pre) {
-    background-color: var(--color-dark-gray);
+    background-color: #f5f5f5;
     padding: 1.2rem;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     overflow-x: auto;
     margin: 1.2rem 0;
-    border: 1px solid rgba(220, 20, 60, 0.2);
+    border: 1px solid #e0e0e0;
   }
 
   .instructions-content :global(blockquote) {
-    border-left: 5px solid var(--color-crimson);
+    border-left: 5px solid #0cebeb;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
-    color: var(--color-light-gray);
+    color: #555;
     font-style: italic;
-    background-color: rgba(220, 20, 60, 0.1);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background-color: #f0fffd;
+    border-radius: 0 12px 12px 0;
   }
 
   .instructions-content :global(table) {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   }
 
   .instructions-content :global(th),
   .instructions-content :global(td) {
-    border: 1px solid var(--color-dark-gray);
+    border: 1px solid #ddd;
     padding: 0.8rem 1rem;
     text-align: left;
   }
 
   .instructions-content :global(th) {
-    background: linear-gradient(to right, rgba(220, 20, 60, 0.3), rgba(220, 20, 60, 0.2));
-    color: var(--color-white);
+    background: linear-gradient(to right, rgba(12, 235, 235, 0.3), rgba(32, 227, 178, 0.2));
+    color: #333;
     font-weight: 600;
   }
   
   .instructions-content :global(tr:nth-child(even)) {
-    background-color: rgba(220, 20, 60, 0.05);
+    background-color: #f9f9f9;
   }
 
   @media screen and (min-width: 1801px) {
@@ -208,7 +207,7 @@
   @media (max-width: 768px) {
     .instructions-container {
       padding: 1.5rem;
-      border-radius: var(--radius-md);
+      border-radius: 20px;
     }
     
     .instructions-title {

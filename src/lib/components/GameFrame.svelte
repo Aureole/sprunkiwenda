@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '$lib/styles/theme.css';
   import type { GameBaseConfig } from "$lib/types";
   import siteConfig from "$lib/data/site.json";
   import { getCoverUrl, getIframeUrl } from "$lib/helper";
@@ -95,7 +94,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: var(--color-black);
+    background-color: #111;
     overflow: hidden;
     flex-grow: 1;
   }
@@ -109,7 +108,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    filter: blur(var(--blur-amount));
+    filter: blur(30px);
     transform: scale(1.1); /* Prevent blur edges from showing */
     z-index: 1;
     opacity: 0.8;
@@ -122,7 +121,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--overlay-accent);
+    background: linear-gradient(135deg, rgba(12, 235, 235, 0.3), rgba(32, 227, 178, 0.3));
   }
 
   .game-preview-content {
@@ -138,12 +137,12 @@
 
   .game-info {
     flex: 1;
-    padding: 5% var(--space-xl);
+    padding: 5% 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: var(--color-white);
-    background: var(--overlay-dark-gradient);
+    justify-content: center; /* Center vertically */
+    color: white;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 60%, transparent);
     z-index: 3;
   }
 
@@ -152,15 +151,15 @@
   }
 
   .game-title {
-    font-size: min(4rem, 8vw);
+    font-size: min(4rem, 8vw); /* Responsive font size */
     line-height: 1.1;
     margin: 0;
     font-weight: 800;
-    text-shadow: var(--text-shadow-title);
-    background: var(--gradient-text);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #fff, #f0f0f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: var(--animation-text-shine);
+    animation: textShine 3s ease-in-out infinite alternate;
   }
 
   @keyframes textShine {
@@ -169,32 +168,31 @@
   }
 
   .game-subtitle {
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.3rem); /* Responsive font size */
     margin: 1rem 0 0;
     opacity: 0.9;
     max-width: 80%;
     font-weight: 400;
-    text-shadow: var(--text-shadow-subtitle);
-    color: var(--color-light-gray);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   /* Larger play button styles */
   .play-button {
     display: flex;
     align-items: center;
-    background: var(--gradient-crimson);
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
     border: none;
-    color: var(--color-white);
+    color: white;
     padding: 0;
     font-weight: 700;
-    border-radius: var(--radius-round);
+    border-radius: 50px;
     cursor: pointer;
-    transition: var(--transition-bounce);
-    box-shadow: var(--button-play-shadow);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.5);
     align-self: flex-start;
     overflow: hidden;
-    margin-top: var(--space-lg);
-    position: relative;
+    margin-top: 2rem;
+    position: relative; /* For hover effect */
     transform: scale(1.15);
     transform-origin: center center;
   }
@@ -205,8 +203,8 @@
     justify-content: center;
     width: clamp(60px, 6vw, 85px);
     height: clamp(60px, 6vw, 85px);
-    background: var(--button-icon-bg);
-    border-radius: var(--radius-circle);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
     margin-right: 10px;
   }
 
@@ -225,8 +223,7 @@
 
   .play-button:hover {
     transform: translateY(-5px) scale(1.17);
-    box-shadow: var(--button-play-shadow-hover);
-    background: var(--gradient-crimson-hover);
+    box-shadow: 0 15px 30px rgba(12, 235, 235, 0.7);
   }
 
   .play-button:active {
@@ -240,7 +237,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--button-hover-overlay);
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -259,15 +256,15 @@
 
   .preview-circle {
     position: relative;
-    width: min(220px, 20vw);
-    height: min(220px, 20vw);
-    border-radius: var(--radius-circle);
+    width: min(220px, 20vw); /* Responsive size */
+    height: min(220px, 20vw); /* Responsive size */
+    border-radius: 50%;
     overflow: hidden;
-    box-shadow: var(--circle-border);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 30px rgba(0, 0, 0, 0.3);
     background-size: cover;
     background-position: center;
     z-index: 3;
-    animation: var(--animation-pulse);
+    animation: pulse 4s ease-in-out infinite;
   }
 
   @keyframes pulse {
@@ -278,7 +275,7 @@
 
   .circle-decoration {
     position: absolute;
-    border-radius: var(--radius-circle);
+    border-radius: 50%;
     opacity: 0.6;
     z-index: 2;
   }
@@ -286,28 +283,28 @@
   .circle-1 {
     width: clamp(40px, 4vw, 60px);
     height: clamp(40px, 4vw, 60px);
-    background: linear-gradient(45deg, var(--color-crimson), var(--color-crimson-dark));
+    background: linear-gradient(45deg, #0cebeb, #20e3b2);
     top: 20%;
     right: 15%;
-    animation: var(--animation-float-1);
+    animation: float 6s ease-in-out infinite;
   }
 
   .circle-2 {
     width: clamp(30px, 3vw, 40px);
     height: clamp(30px, 3vw, 40px);
-    background: linear-gradient(45deg, var(--color-crimson-dark), var(--color-crimson));
+    background: linear-gradient(45deg, #20e3b2, #0cebeb);
     bottom: 20%;
     right: 25%;
-    animation: var(--animation-float-2);
+    animation: float 7s ease-in-out infinite 1s;
   }
 
   .circle-3 {
     width: clamp(20px, 2vw, 25px);
     height: clamp(20px, 2vw, 25px);
-    background: linear-gradient(45deg, var(--color-crimson-dark), var(--color-crimson-light));
+    background: linear-gradient(45deg, #20e3b2, #0dcfcf);
     top: 40%;
     right: 30%;
-    animation: var(--animation-float-3);
+    animation: float 5s ease-in-out infinite 0.5s;
   }
 
   @keyframes float {
@@ -320,9 +317,9 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: var(--color-black);
+    background-color: #000;
     flex-grow: 1;
-    overflow: hidden;
+    overflow: hidden; /* Prevent overflow issues */
   }
   
   .game-iframe {
@@ -366,19 +363,19 @@
   /* Medium screens / tablets */
   @media (max-width: 768px) and (min-height: 320px) {
     .game-info {
-      padding: var(--space-xl) var(--space-md);
+      padding: 3rem 1.5rem;
       text-align: center;
       align-items: center;
       width: 100%;
-      background: var(--overlay-dark-mobile);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.5) 70%, transparent);
       justify-content: flex-start;
     }
     
     .title-container {
-      margin-bottom: var(--space-md);
-      margin-top: var(--space-lg);
+      margin-bottom: 1.5rem;
+      margin-top: 2rem;
       position: relative;
-      z-index: 10;
+      z-index: 10; /* Ensure title appears above the circle */
     }
 
     .game-title {
@@ -403,7 +400,7 @@
       height: min(150px, 30vw);
       margin-top: 0;
       transform: translateY(5vh);
-      box-shadow: var(--circle-mobile-border);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(12, 235, 235, 0.5);
     }
     
     .circle-1 {
@@ -425,7 +422,7 @@
     .play-button {
       margin-top: 0;
       position: absolute;
-      bottom: clamp(3.5rem, 15vh, 7rem);
+      bottom: clamp(3.5rem, 15vh, 7rem); /* Increased bottom margin to move button up */
       left: 50%;
       transform: translateX(-50%) scale(1.15);
       z-index: 5;
@@ -460,11 +457,11 @@
   /* Small phones */
   @media (max-width: 480px) {
     .game-info {
-      padding: var(--space-lg) var(--space-sm);
+      padding: 2rem 1rem;
     }
     
     .title-container {
-      margin-bottom: var(--space-sm);
+      margin-bottom: 1rem;
       margin-top: 1.5rem;
     }
     
@@ -475,13 +472,13 @@
     .preview-circle {
       width: min(110px, 30vw);
       height: min(110px, 30vw);
-      transform: translateY(-2vh);
-      box-shadow: var(--circle-small-mobile-border);
+      transform: translateY(-2vh); /* Moved circle up slightly */
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(12, 235, 235, 0.5);
     }
     
     /* Improved centering for small screens */
     .play-button {
-      bottom: clamp(3rem, 12vh, 5rem);
+      bottom: clamp(3rem, 12vh, 5rem); /* Increased bottom margin to move button up */
       transform: translateX(-50%) scale(1.1);
       min-width: 180px;
       left: 50%;
@@ -526,13 +523,14 @@
   }
   
   /* Very small phones or landscape mode on small phones */
-  @media (max-height: 560px) and (orientation: landscape) {
+  @media (max-height: 560px) and (orientation: landscape)  {
     .preview-circle {
-      transform: translateY(-1vh);
+      transform: translateY(-1vh); /* Moved circle slightly up */
     }
+
     
     .play-button {
-      bottom: clamp(2rem, 8vh, 3rem);
+      bottom: clamp(2rem, 8vh, 3rem); /* Increased bottom margin for very small screens */
       transform: translateX(-50%) scale(1.05);
     }
     
@@ -545,7 +543,7 @@
     }
     
     .title-container {
-      margin-top: var(--space-sm);
+      margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
     

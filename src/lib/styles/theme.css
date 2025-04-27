@@ -1,23 +1,23 @@
 :root {
-  /* Primary Colors */
-  --color-crimson: #DC143C;
-  --color-crimson-dark: #A51030;
-  --color-crimson-light: #FF3358;
+  /* Brand Colors */
+  --brand-primary: #DC143C;
+  --brand-primary-dark: #A51030;
+  --brand-primary-light: #FF3358;
   
-  /* Neutral Colors */
-  --color-black: #121212;
-  --color-dark-gray: #1E1E1E;
-  --color-gray: #333333;
-  --color-light-gray: #E0E0E0;
-  --color-white: #F5F5F5;
+  /* Surface Colors */
+  --surface-dark: #121212;
+  --surface-medium: #1E1E1E;
+  --surface-light: #333333;
+  --text-secondary: #E0E0E0;
+  --text-primary: #F5F5F5;
   
   /* Gradients */
-  --gradient-crimson: linear-gradient(to right, var(--color-crimson-dark), var(--color-crimson));
-  --gradient-crimson-hover: linear-gradient(to right, var(--color-crimson), var(--color-crimson-light));
-  --gradient-text: linear-gradient(135deg, var(--color-white) 0%, var(--color-crimson) 100%);
+  --gradient-primary: linear-gradient(to right, var(--brand-primary-dark), var(--brand-primary));
+  --gradient-primary-hover: linear-gradient(to right, var(--brand-primary), var(--brand-primary-light));
+  --gradient-text-highlight: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-primary) 100%);
   
   /* Effects */
-  --shadow-small: 0 3px 10px rgba(220, 20, 60, 0.3);
+  --shadow-primary: 0 3px 10px rgba(220, 20, 60, 0.3);
   --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.2);
   --shadow-large: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
   
@@ -48,20 +48,20 @@
   --overlay-accent: linear-gradient(135deg, rgba(220, 20, 60, 0.3), rgba(165, 16, 48, 0.3));
   
   /* Buttons */
-  --button-play-shadow: 0 10px 25px rgba(220, 20, 60, 0.5);
-  --button-play-shadow-hover: 0 15px 30px rgba(220, 20, 60, 0.7);
-  --button-icon-bg: rgba(255, 255, 255, 0.2);
-  --button-hover-overlay: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+  --button-primary-shadow: 0 10px 25px rgba(220, 20, 60, 0.5);
+  --button-primary-shadow-hover: 0 15px 30px rgba(220, 20, 60, 0.7);
+  --button-icon-background: rgba(255, 255, 255, 0.2);
+  --button-hover-effect: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
   
   /* Decorative Elements */
-  --circle-border: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 30px rgba(0, 0, 0, 0.3);
-  --circle-mobile-border: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(220, 20, 60, 0.5);
-  --circle-small-mobile-border: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(220, 20, 60, 0.5);
+  --element-border-glow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 30px rgba(0, 0, 0, 0.3);
+  --element-border-mobile: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 40px rgba(220, 20, 60, 0.5);
+  --element-border-small-mobile: 0 0 0 8px rgba(255, 255, 255, 0.15), 0 0 30px rgba(220, 20, 60, 0.5);
   
   /* Effects */
   --blur-amount: 30px;
-  --text-shadow-title: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  --text-shadow-subtitle: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  --text-shadow-large: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  --text-shadow-small: 1px 1px 3px rgba(0, 0, 0, 0.5);
   
   /* Animation */
   --animation-pulse: pulse 4s ease-in-out infinite;

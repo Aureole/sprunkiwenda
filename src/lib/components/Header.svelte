@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '$lib/styles/theme.css';
   import { onMount } from 'svelte';
   import config from '$lib/data/header.json';
   
@@ -121,19 +120,19 @@
 <style>
   .header-container {
     width: 100%;
-    background-color: var(--color-black);
-    box-shadow: var(--shadow-medium);
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(220, 20, 60, 0.2);
+    border-bottom: 1px solid rgba(12, 235, 235, 0.1);
   }
 
   .header-content {
     width: 90%;
-    max-width: 1800px;
+    max-width: 1800px;  /* Increased from 1200px */
     margin: 0 auto;
-    padding: var(--space-sm);
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -143,7 +142,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: var(--transition-bounce);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: fadeIn 0.5s ease forwards;
     gap: 12px;
   }
@@ -155,20 +154,20 @@
   .logo-container {
     width: 45px;
     height: 45px;
-    border-radius: var(--radius-circle);
+    border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-black);
-    box-shadow: var(--shadow-small);
-    border: 2px solid rgba(220, 20, 60, 0.4);
-    transition: var(--transition-medium);
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.15);
+    border: 2px solid rgba(12, 235, 235, 0.2);
+    transition: all 0.3s ease;
   }
   
   .logo-container:hover {
-    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.5);
-    border-color: rgba(220, 20, 60, 0.7);
+    box-shadow: 0 5px 15px rgba(12, 235, 235, 0.25);
+    border-color: rgba(12, 235, 235, 0.4);
   }
 
   .logo-image {
@@ -186,13 +185,14 @@
   .title-text {
     font-size: 1.35rem;
     font-weight: 700;
+    color: #333;
     letter-spacing: 0.01em;
-    background: var(--gradient-text);
+    background: linear-gradient(135deg, #333 0%, #0cebeb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    transition: var(--transition-medium);
+    transition: all 0.3s ease;
   }
 
   .logo-link:hover .title-text {
@@ -226,12 +226,12 @@
 
   .nav-link {
     text-decoration: none;
-    color: var(--color-white);
+    color: #333;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: var(--transition-medium);
+    transition: all 0.25s ease;
     padding: 0.5rem 1rem;
-    border-radius: var(--radius-round);
+    border-radius: 50px;
     position: relative;
     overflow: hidden;
     letter-spacing: 0.02em;
@@ -245,17 +245,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(220, 20, 60, 0.15), rgba(220, 20, 60, 0.25));
+    background: linear-gradient(90deg, rgba(12, 235, 235, 0.12), rgba(32, 227, 178, 0.15));
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: -1;
-    border-radius: var(--radius-round);
+    border-radius: 50px;
   }
 
   .nav-link:hover {
-    color: var(--color-crimson);
-    text-shadow: 0 1px 2px rgba(220, 20, 60, 0.2);
+    color: #0cebeb;
+    text-shadow: 0 1px 2px rgba(12, 235, 235, 0.1);
   }
   
   .nav-link:hover:before {
@@ -282,8 +282,8 @@
     height: 2px;
     width: 100%;
     border-radius: 10px;
-    background: var(--color-white);
-    transition: var(--transition-medium);
+    background: #333;
+    transition: all 0.3s ease-in-out;
   }
   
   /* Empty spacer to maintain layout */
@@ -299,7 +299,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 101;
     animation: fadeIn 0.3s ease forwards;
   }
@@ -310,10 +310,10 @@
     left: -320px;
     width: 280px;
     height: 100%;
-    background-color: var(--color-black);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     z-index: 102;
-    padding: var(--space-lg) var(--space-sm);
+    padding: 2rem 1rem;
     transition: left 0.3s ease-in-out;
     overflow-y: auto;
   }
@@ -329,21 +329,21 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    color: var(--color-white);
+    color: #333;
     padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-circle);
+    border-radius: 50%;
     transition: background-color 0.2s ease;
   }
 
   .close-button:hover {
-    background-color: rgba(220, 20, 60, 0.15);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   .sidebar-nav {
-    margin-top: var(--space-lg);
+    margin-top: 2rem;
   }
 
   .sidebar-nav-list {
@@ -363,10 +363,10 @@
     display: block;
     padding: 0.75rem 1rem;
     text-decoration: none;
-    color: var(--color-white);
+    color: #333;
     font-weight: 600;
-    border-radius: var(--radius-sm);
-    transition: var(--transition-medium);
+    border-radius: 8px;
+    transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
     letter-spacing: 0.02em;
@@ -375,10 +375,10 @@
   }
 
   .sidebar-nav-link:hover {
-    color: var(--color-crimson);
-    background-color: rgba(220, 20, 60, 0.1);
+    color: #0cebeb;
+    background-color: rgba(12, 235, 235, 0.08);
     padding-left: 1.5rem;
-    text-shadow: 0 1px 2px rgba(220, 20, 60, 0.2);
+    text-shadow: 0 1px 2px rgba(12, 235, 235, 0.1);
   }
 
   /* Media Queries */

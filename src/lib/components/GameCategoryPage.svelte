@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '$lib/styles/theme.css';
   import { onMount } from 'svelte';
   import SvelteMarkdown from 'svelte-markdown';
   import Header from './Header.svelte';
@@ -145,12 +144,12 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, var(--color-dark-gray), var(--color-black));
+    background: linear-gradient(135deg, #f8f9fa, #f0f2f5);
   }
 
   .main-content {
     flex-grow: 1;
-    padding: var(--space-lg);
+    padding: 2rem;
     width: 90%;
     max-width: 1800px;
     margin: 0 auto;
@@ -163,12 +162,12 @@
   .category-title {
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--color-white);
-    margin-bottom: var(--space-lg);
+    color: #333;
+    margin-bottom: 2rem;
     position: relative;
     padding-left: 1.5rem;
     line-height: 1.2;
-    background: linear-gradient(to right, var(--color-white), var(--color-light-gray));
+    background: linear-gradient(to right, #333, #555);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -182,32 +181,32 @@
     transform: translateY(-50%);
     width: 8px;
     height: 70%;
-    background: linear-gradient(to bottom, var(--color-crimson-dark), var(--color-crimson));
+    background: linear-gradient(to bottom, #0cebeb, #20e3b2);
     border-radius: 8px;
-    box-shadow: var(--shadow-small);
+    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.4);
   }
 
   .category-games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: var(--space-lg);
+    gap: 2rem;
     width: 100%;
   }
 
   .game-card {
     text-decoration: none;
-    transition: var(--transition-bounce);
-    border-radius: var(--radius-md);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 20px;
     overflow: hidden;
-    background-color: var(--color-black);
-    box-shadow: var(--shadow-medium);
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     position: relative;
     animation: fadeIn 0.5s ease forwards;
   }
 
   .game-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 15px 30px rgba(12, 235, 235, 0.2);
   }
 
   .game-card::after {
@@ -217,7 +216,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
     transform: scaleX(0);
     transition: transform 0.4s ease;
     transform-origin: left;
@@ -252,7 +251,7 @@
     margin: 0;
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--color-white);
+    color: #333;
     text-align: center;
     line-height: 1.3;
     display: -webkit-box;
@@ -263,12 +262,12 @@
 
   /* Category description section */
   .category-description {
-    background-color: var(--color-black);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
-    box-shadow: var(--shadow-large);
-    margin: var(--space-lg) 0;
-    border: 1px solid rgba(220, 20, 60, 0.2);
+    background-color: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.6s ease-out forwards;
@@ -281,12 +280,12 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
   }
 
   .content-wrapper {
     line-height: 1.7;
-    color: var(--color-light-gray);
+    color: #444;
     font-size: 1.05rem;
     max-width: 100%;
   }
@@ -297,7 +296,7 @@
   .content-wrapper :global(h4),
   .content-wrapper :global(h5),
   .content-wrapper :global(h6) {
-    color: var(--color-white);
+    color: #333;
     margin-top: 1.8em;
     margin-bottom: 0.8em;
     font-weight: 700;
@@ -305,7 +304,7 @@
 
   .content-wrapper :global(h1) {
     font-size: 1.8rem;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -323,7 +322,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
     border-radius: 3px;
   }
 
@@ -342,7 +341,7 @@
   }
   
   .content-wrapper :global(li::marker) {
-    color: var(--color-crimson);
+    color: #0cebeb;
   }
 
   .app {
@@ -397,7 +396,7 @@
     }
     
     .game-card {
-      border-radius: var(--radius-md);
+      border-radius: 16px;
     }
     
     .game-card-title {
@@ -407,7 +406,7 @@
     
     .category-description {
       padding: 1.5rem;
-      border-radius: var(--radius-md);
+      border-radius: 20px;
     }
   }
 

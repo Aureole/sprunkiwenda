@@ -1,9 +1,8 @@
 <script lang="ts">
-  import '$lib/styles/theme.css';
   import { onMount } from 'svelte';
   import { type GameConfig } from '$lib/types';
   import siteConfig from '$lib/data/site.json';
-  import { getCoverUrl, getGameFrameUrl } from '$lib/helper';
+  import { getCoverUrl } from '$lib/helper';
   
   export let config: GameConfig;
   
@@ -114,7 +113,7 @@
   <div class="game-iframe-container" class:fullscreen={isFullScreen}>
     <iframe
       title={config.title}
-      src={getGameFrameUrl(siteConfig, config)}
+      src={`${siteConfig.baseUrl}/games/${config.id}`}
       class="game-iframe"
       class:fullscreen={isFullScreen}
       allowfullscreen
@@ -168,14 +167,14 @@
 <style>
   .game-component {
     width: 100%;
-    border-radius: var(--radius-lg);
+    border-radius: 24px;
     overflow: hidden;
-    background-color: var(--color-black);
-    box-shadow: var(--shadow-large);
+    background-color: #111;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--space-lg);
+    margin-bottom: 2rem;
   }
   
   /* For fullscreen state */
@@ -183,8 +182,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
     z-index: 9999;
     margin: 0;
     border-radius: 0;
@@ -192,31 +191,49 @@
     flex-direction: column;
   }
 
+  .game-component.fullscreen::after {
+    content: none; /* Remove the "Press ESC" message since it's not applicable on mobile */
+  }
+  
   .game-iframe-container {
     border: none;
     width: 100%;
     min-height: 600px;
     height: 600px;
     position: relative;
-    background-color: var(--color-black);
+    background-color: #111;
     overflow: hidden;
     flex: 1;
   }
 
+  @media (max-width: 768px) {
+    .game-iframe-container {
+      min-height: 480px;
+      height: 480px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .game-iframe-container {
+      min-height: 400px;
+      height: 400px;
+    }
+  }
+
   .game-iframe-container.fullscreen {
-    height: 100vh;
-    width: 100vw;
-    max-height: none;
-    min-height: 100vh;
+    height: 100vh; /* Use viewport height */
+    width: 100vw;  /* Use viewport width */
+    max-height: none; /* Remove the max-height limit in fullscreen */
+    min-height: 100vh; /* Set min-height to viewport height */
   }
   
   .game-iframe {
     width: 100%;
     height: 100%;
     border: none;
-    object-fit: contain;
-    display: block;
-    position: absolute;
+    object-fit: contain; /* Change from cover to contain */
+    display: block; /* Ensure the iframe is displayed as a block */
+    position: absolute; /* Position absolutely within the container */
     top: 0;
     left: 0;
     right: 0;
@@ -235,13 +252,13 @@
   .game-control-bar {
     width: 100%;
     height: 70px;
-    background: linear-gradient(to right, rgba(20, 20, 20, 0.95), rgba(40, 40, 40, 0.95));
+    background: linear-gradient(to right, rgba(20, 20, 20, 0.95), rgba(30, 30, 30, 0.95));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-white);
+    color: white;
     z-index: 5;
-    border-top: 1px solid rgba(220, 20, 60, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-shrink: 0;
   }
 
@@ -259,12 +276,12 @@
   .game-icon {
     width: 45px;
     height: 45px;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(220, 20, 60, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
   }
 
   .game-info-text {
@@ -299,16 +316,16 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(220, 20, 60, 0.2);
-    border: 1px solid rgba(220, 20, 60, 0.4);
-    color: var(--color-white);
+    background-color: rgba(12, 235, 235, 0.2);
+    border: 1px solid rgba(12, 235, 235, 0.3);
+    color: white;
     cursor: pointer;
     padding: 0.6rem 1.2rem;
     margin-right: 1.5rem;
-    border-radius: var(--radius-sm);
+    border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: var(--transition-fast);
+    transition: all 0.2s ease;
   }
   
   .fullscreen-icon {
@@ -326,7 +343,7 @@
   }
 
   .fullscreen-button:hover {
-    background-color: rgba(220, 20, 60, 0.4);
+    background-color: rgba(12, 235, 235, 0.4);
     transform: translateY(-2px);
   }
   
@@ -340,9 +357,9 @@
     top: 20px;
     right: 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    color: var(--color-white);
-    border: 1px solid rgba(220, 20, 60, 0.3);
-    border-radius: var(--radius-sm);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
     padding: 8px 16px;
     display: flex;
     align-items: center;
@@ -370,12 +387,12 @@
       top: 20px;
       right: 20px;
       background-color: rgba(0, 0, 0, 0.6);
-      color: var(--color-white);
+      color: white;
       padding: 8px 16px;
-      border-radius: var(--radius-round);
+      border-radius: 20px;
       font-size: 14px;
       opacity: 0.7;
-      transition: var(--transition-medium);
+      transition: opacity 0.3s ease;
       pointer-events: none;
       animation: fadeOut 3s forwards 2s;
     }
@@ -408,7 +425,7 @@
     .game-icon {
       width: 35px;
       height: 35px;
-      border-radius: var(--radius-sm);
+      border-radius: 8px;
     }
 
     .game-bar-title {

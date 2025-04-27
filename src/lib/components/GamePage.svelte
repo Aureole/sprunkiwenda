@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '$lib/styles/theme.css';
   import { type GameConfig } from '$lib/types';
   import Header from './Header.svelte';
   import Footer from './Footer.svelte';
@@ -50,16 +49,6 @@
   <meta name="twitter:description" content={config.description} />
   <meta name="twitter:image" content={getCoverUrl(siteConfig, config)} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      height: 100%;
-    }
-    
-    html {
-      height: 100%;
-    }
-  </style>
   {#if siteConfig.microsoftClarityId}
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -114,25 +103,26 @@
   {/if}
 </div>
 
+
 <style>
   .page-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, var(--color-dark-gray), var(--color-black));
+    background: linear-gradient(135deg, #f8f9fa, #f0f2f5);
   }
 
   .main-content {
     flex-grow: 1;
-    padding: var(--space-lg);
+    padding: 2rem;
     width: 90%;
-    max-width: 1800px;
+    max-width: 1800px;  /* Increased from 1200px */
     margin: 0 auto;
   }
 
   .content-layout {
     display: flex;
-    gap: var(--space-lg);
+    gap: 2rem;
   }
 
   .main-column {
@@ -147,10 +137,10 @@
 
   .side-content {
     position: relative;
-    background: var(--color-black);
-    border-radius: var(--radius-lg);
-    padding: 1.2rem;
-    box-shadow: var(--shadow-large);
+    background: white;
+    border-radius: 24px;
+    padding: 1.2rem;  /* Reduced from 1.5rem to 1.2rem */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
     overflow: hidden;
   }
 
@@ -161,9 +151,15 @@
     left: 0;
     width: 100%;
     height: 6px;
-    background: var(--gradient-crimson);
+    background: linear-gradient(to right, #0cebeb, #20e3b2);
   }
 
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
   .section-header {
     display: flex;
     align-items: center;
@@ -174,15 +170,15 @@
   .section-dot {
     width: 16px;
     height: 16px;
-    background: linear-gradient(45deg, var(--color-crimson-dark), var(--color-crimson));
+    background: linear-gradient(45deg, #0cebeb, #20e3b2);
     border-radius: 50%;
     margin-right: 12px;
-    box-shadow: 0 3px 8px rgba(220, 20, 60, 0.6);
+    box-shadow: 0 3px 8px rgba(12, 235, 235, 0.4);
   }
   
   .section-line {
     height: 3px;
-    background: linear-gradient(to right, rgba(220, 20, 60, 0.7), rgba(220, 20, 60, 0.2));
+    background: linear-gradient(to right, rgba(12, 235, 235, 0.4), rgba(12, 235, 235, 0.1));
     flex-grow: 1;
     border-radius: 3px;
   }
