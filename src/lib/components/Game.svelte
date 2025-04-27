@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import { type GameConfig } from '$lib/types';
   import siteConfig from '$lib/data/site.json';
-  import { getCoverUrl } from '$lib/helper';
+  import { getCoverUrl, getGameFrameUrl } from '$lib/helper';
   
   export let config: GameConfig;
   
@@ -114,7 +114,7 @@
   <div class="game-iframe-container" class:fullscreen={isFullScreen}>
     <iframe
       title={config.title}
-      src={`${siteConfig.baseUrl}/games/${config.id}`}
+      src={getGameFrameUrl(siteConfig, config)}
       class="game-iframe"
       class:fullscreen={isFullScreen}
       allowfullscreen

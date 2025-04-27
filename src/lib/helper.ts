@@ -10,16 +10,23 @@ export function getCoverUrl(site: SiteConfig, config: GameBaseConfig) {
 }
 
 export function getGameUrl(site: SiteConfig, config: GameBaseConfig) {
-  // if testing in local environment, use the local URL
   let baseUrl = site.baseUrl;
   if (browser && window.location.hostname === "localhost") {
-    baseUrl = "http://localhost:5174";
+    baseUrl = `http://${window.location.hostname}:${window.location.port}`;
   }
   if (config.routeId === undefined) {
     return `${baseUrl}/${config.id}`;
   } else {
     return `${baseUrl}/${config.routeId}`;
   }
+}
+
+export function getGameFrameUrl(site: SiteConfig, config: GameBaseConfig) {
+  let baseUrl = site.baseUrl;
+  if (browser && window.location.hostname === "localhost") {
+    baseUrl = `http://${window.location.hostname}:${window.location.port}`;
+  }
+  return `${baseUrl}/games/${config.id}`;
 }
 
 export function getIframeUrl(site: SiteConfig, config: GameBaseConfig) {
