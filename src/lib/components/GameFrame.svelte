@@ -549,7 +549,7 @@
     
     /* Reduced title font size for landscape mode */
     .game-title {
-      font-size: min(2.2rem, 7vw);
+      font-size: min(1.8rem, 7vw);
     }
     
     /* Keep button reasonably sized in landscape mode */
