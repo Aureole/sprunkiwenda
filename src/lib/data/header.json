@@ -5,6 +5,8 @@
     "href": "/"
   },
   "navItems": [
-    { "title": "Sprunki Wenda Treatment", "href": "/" }
+    { "title": "Sprunki Wenda Treatment", "href": "/" },
+    { "title": "Sprunki Gray Treatment", "href": "/sprunki-gray-treatment" },
+    { "title": "Sprunki Brud Treatment", "href": "/sprunki-brud-treatment" }
   ]
 }

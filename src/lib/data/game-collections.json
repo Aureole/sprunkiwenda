@@ -1,10 +1,10 @@
 {
   "trending": {
     "title": "Trending Games",
-    "gameIds": ["sprunki-wenda-treatment"]
+    "gameIds": ["sprunki-wenda-treatment", "sprunki-gray-treatment", "sprunki-brud-treatment", "sprunki-raddy-treatment", "sprunki-simons-realm", "sprunki-italian-brainrot"] 
   },
   "popular": {
     "title": "Popular Games",
-    "gameIds": ["sprunki-wenda-treatment"]
+    "gameIds": ["sprunki-incredibox", "sprunki-retake", "sprunki-swapped-retextured", "sprunki-phase-777-3-7"]
   }
 }
