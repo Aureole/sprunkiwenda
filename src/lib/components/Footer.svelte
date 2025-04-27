@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$lib/styles/theme.css';
   import config from '$lib/data/footer.json';
 </script>
 
@@ -40,10 +41,10 @@
 
 <style>
   .footer-container {
-    background: linear-gradient(to bottom, #fcfcfc, #f7f7f7);
-    padding: 3rem 0 2rem;
-    margin-top: 4rem;
-    border-top: 1px solid #eaeaea;
+    background: linear-gradient(to bottom, var(--color-black), var(--color-dark-gray));
+    padding: var(--space-xl) 0 var(--space-lg);
+    margin-top: var(--space-xl);
+    border-top: 1px solid rgba(220, 20, 60, 0.2);
     position: relative;
   }
   
@@ -54,13 +55,13 @@
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, #0cebeb, #20e3b2, #0cebeb, #20e3b2);
-    opacity: 0.7;
+    background: linear-gradient(90deg, var(--color-crimson-dark), var(--color-crimson), var(--color-crimson-dark), var(--color-crimson));
+    opacity: 0.8;
   }
 
   .footer-content {
     width: 90%;
-    max-width: 1800px;  /* Increased from 1200px */
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
@@ -70,9 +71,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1.2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 2rem;
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(220, 20, 60, 0.2);
+    margin-top: var(--space-lg);
   }
 
   .footer-links {
@@ -83,16 +84,16 @@
   }
 
   .footer-link {
-    color: #444;
+    color: var(--color-light-gray);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--transition-medium);
     font-size: 0.95rem;
     position: relative;
     font-weight: 500;
   }
 
   .footer-link:hover {
-    color: #0cebeb;
+    color: var(--color-crimson);
   }
   
   .footer-link:after {
@@ -102,7 +103,7 @@
     height: 2px;
     bottom: -4px;
     left: 0;
-    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 2px;
   }
@@ -112,7 +113,7 @@
   }
 
   .footer-copyright {
-    color: #777;
+    color: var(--color-light-gray);
     font-size: 0.85rem;
     text-align: center;
     margin-top: 0.5rem;
@@ -128,7 +129,7 @@
   .game-section-title {
     margin: 0 0 1.2rem 0;
     font-size: 1.15rem;
-    color: #333;
+    color: var(--color-white);
     position: relative;
     padding-bottom: 0.7rem;
     font-weight: 600;
@@ -141,7 +142,7 @@
     height: 4px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     border-radius: 4px;
     transition: width 0.3s ease;
   }
@@ -160,9 +161,9 @@
   }
 
   .game-link {
-    color: #555;
+    color: var(--color-light-gray);
     text-decoration: none;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: var(--transition-bounce);
     font-size: 0.95rem;
     display: flex;
     align-items: center;
@@ -171,22 +172,22 @@
   .game-link-dot {
     width: 8px;
     height: 8px;
-    background: linear-gradient(45deg, #0cebeb, #20e3b2);
+    background: linear-gradient(45deg, var(--color-crimson-dark), var(--color-crimson));
     border-radius: 50%;
     margin-right: 10px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: var(--transition-bounce);
     opacity: 0.6;
   }
 
   .game-link:hover {
-    color: #0cebeb;
+    color: var(--color-crimson);
     transform: translateX(5px);
   }
   
   .game-link:hover .game-link-dot {
     opacity: 1;
     transform: scale(1.3);
-    box-shadow: 0 0 10px rgba(12, 235, 235, 0.5);
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.7);
   }
 
   @media screen and (min-width: 1801px) {
@@ -197,12 +198,12 @@
 
   @media (max-width: 768px) {
     .footer-container {
-      padding: 2rem 0 1.5rem;
-      margin-top: 3rem;
+      padding: var(--space-lg) 0 var(--space-md);
+      margin-top: var(--space-xl);
     }
     
     .footer-content {
-      padding: 0 1rem;
+      padding: 0 var(--space-sm);
     }
 
     .footer-links {
@@ -213,12 +214,12 @@
     }
     
     .footer-bottom {
-      padding-top: 1.5rem;
+      padding-top: var(--space-md);
     }
 
     .footer-game-links {
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 2rem;
+      gap: var(--space-lg);
     }
     
     .game-section-title {

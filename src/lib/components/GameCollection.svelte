@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$lib/styles/theme.css';
   import { type GameCollectionConfig } from '$lib/types';
   import siteConfig from '$lib/data/site.json';
   import { getCoverUrl, getGameUrl } from '$lib/helper';
@@ -61,7 +62,7 @@
 
 <style>
   .game-collection {
-    margin: 2rem 0;
+    margin: var(--space-lg) 0;
     width: 100%;
   }
 
@@ -69,10 +70,10 @@
     font-size: 1.8rem;
     font-weight: 800;
     margin: 0 0 1.5rem 0;
-    color: #333;
+    color: var(--color-white);
     position: relative;
     padding-left: 1.2rem;
-    background: linear-gradient(to right, #333, #555);
+    background: linear-gradient(to right, var(--color-white), var(--color-light-gray));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -85,9 +86,9 @@
     transform: translateY(-50%);
     width: 6px;
     height: 1.2em;
-    background: linear-gradient(to bottom, #0cebeb, #20e3b2);
+    background: linear-gradient(to bottom, var(--color-crimson-dark), var(--color-crimson));
     border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.4);
+    box-shadow: var(--shadow-small);
   }
 
   .games-grid {
@@ -104,17 +105,17 @@
 
   .game-card {
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 20px;
+    transition: var(--transition-bounce);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-black);
+    box-shadow: var(--shadow-medium);
     position: relative;
   }
 
   .game-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(12, 235, 235, 0.2);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.3);
   }
 
   .game-card::after {
@@ -124,7 +125,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     transform: scaleX(0);
     transition: transform 0.4s ease;
     transform-origin: left;
@@ -159,7 +160,7 @@
     margin: 0;
     font-size: 1rem;
     font-weight: 700;
-    color: #333;
+    color: var(--color-white);
     text-align: center;
     line-height: 1.3;
     display: -webkit-box;
@@ -175,7 +176,7 @@
   }
 
   .vertical .game-card {
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   }
 
@@ -210,7 +211,7 @@
     }
     
     .game-card {
-      border-radius: 16px;
+      border-radius: var(--radius-md);
     }
     
     .game-card-title {

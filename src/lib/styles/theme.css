@@ -1,0 +1,42 @@
+:root {
+  /* Primary Colors */
+  --color-crimson: #DC143C;
+  --color-crimson-dark: #A51030;
+  --color-crimson-light: #FF3358;
+  
+  /* Neutral Colors */
+  --color-black: #121212;
+  --color-dark-gray: #1E1E1E;
+  --color-gray: #333333;
+  --color-light-gray: #E0E0E0;
+  --color-white: #F5F5F5;
+  
+  /* Gradients */
+  --gradient-crimson: linear-gradient(to right, var(--color-crimson-dark), var(--color-crimson));
+  --gradient-crimson-hover: linear-gradient(to right, var(--color-crimson), var(--color-crimson-light));
+  --gradient-text: linear-gradient(135deg, var(--color-white) 0%, var(--color-crimson) 100%);
+  
+  /* Effects */
+  --shadow-small: 0 3px 10px rgba(220, 20, 60, 0.3);
+  --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.2);
+  --shadow-large: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Animation */
+  --transition-fast: all 0.2s ease;
+  --transition-medium: all 0.3s ease;
+  --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-round: 50px;
+  --radius-circle: 50%;
+}

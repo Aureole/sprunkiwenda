@@ -5,8 +5,6 @@
     "href": "/"
   },
   "navItems": [
-    { "title": "Sprunki Mods", "href": "/categories/sprunki-mods" },
-    { "title": "Sprunki Phase 5", "href": "/sprunki-phase5" },
-    { "title": "Sprunki Retake", "href": "/sprunki-retake" }
+    { "title": "Sprunki Wenda Treatment", "href": "/" }
   ]
 }

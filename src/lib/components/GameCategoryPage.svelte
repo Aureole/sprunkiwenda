@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$lib/styles/theme.css';
   import { onMount } from 'svelte';
   import SvelteMarkdown from 'svelte-markdown';
   import Header from './Header.svelte';
@@ -82,6 +83,17 @@
   <meta name="twitter:title" content={config.seoTitle} />
   <meta name="twitter:description" content={config.description} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    html {
+      height: 100%;
+    }
+  </style>
   {#if siteConfig.microsoftClarityId}
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -134,12 +146,12 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #f8f9fa, #f0f2f5);
+    background: linear-gradient(135deg, var(--color-dark-gray), var(--color-black));
   }
 
   .main-content {
     flex-grow: 1;
-    padding: 2rem;
+    padding: var(--space-lg);
     width: 90%;
     max-width: 1800px;
     margin: 0 auto;
@@ -152,12 +164,12 @@
   .category-title {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #333;
-    margin-bottom: 2rem;
+    color: var(--color-white);
+    margin-bottom: var(--space-lg);
     position: relative;
     padding-left: 1.5rem;
     line-height: 1.2;
-    background: linear-gradient(to right, #333, #555);
+    background: linear-gradient(to right, var(--color-white), var(--color-light-gray));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -171,32 +183,32 @@
     transform: translateY(-50%);
     width: 8px;
     height: 70%;
-    background: linear-gradient(to bottom, #0cebeb, #20e3b2);
+    background: linear-gradient(to bottom, var(--color-crimson-dark), var(--color-crimson));
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(12, 235, 235, 0.4);
+    box-shadow: var(--shadow-small);
   }
 
   .category-games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 2rem;
+    gap: var(--space-lg);
     width: 100%;
   }
 
   .game-card {
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 20px;
+    transition: var(--transition-bounce);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-black);
+    box-shadow: var(--shadow-medium);
     position: relative;
     animation: fadeIn 0.5s ease forwards;
   }
 
   .game-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(12, 235, 235, 0.2);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.3);
   }
 
   .game-card::after {
@@ -206,7 +218,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     transform: scaleX(0);
     transition: transform 0.4s ease;
     transform-origin: left;
@@ -241,7 +253,7 @@
     margin: 0;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #333;
+    color: var(--color-white);
     text-align: center;
     line-height: 1.3;
     display: -webkit-box;
@@ -252,12 +264,12 @@
 
   /* Category description section */
   .category-description {
-    background-color: white;
-    border-radius: 24px;
-    padding: 2rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
-    margin: 2rem 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--color-black);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-large);
+    margin: var(--space-lg) 0;
+    border: 1px solid rgba(220, 20, 60, 0.2);
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.6s ease-out forwards;
@@ -270,12 +282,12 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
   }
 
   .content-wrapper {
     line-height: 1.7;
-    color: #444;
+    color: var(--color-light-gray);
     font-size: 1.05rem;
     max-width: 100%;
   }
@@ -286,7 +298,7 @@
   .content-wrapper :global(h4),
   .content-wrapper :global(h5),
   .content-wrapper :global(h6) {
-    color: #333;
+    color: var(--color-white);
     margin-top: 1.8em;
     margin-bottom: 0.8em;
     font-weight: 700;
@@ -294,7 +306,7 @@
 
   .content-wrapper :global(h1) {
     font-size: 1.8rem;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -312,7 +324,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: linear-gradient(to right, #0cebeb, #20e3b2);
+    background: var(--gradient-crimson);
     border-radius: 3px;
   }
 
@@ -331,7 +343,7 @@
   }
   
   .content-wrapper :global(li::marker) {
-    color: #0cebeb;
+    color: var(--color-crimson);
   }
 
   .app {
@@ -386,7 +398,7 @@
     }
     
     .game-card {
-      border-radius: 16px;
+      border-radius: var(--radius-md);
     }
     
     .game-card-title {
@@ -396,7 +408,7 @@
     
     .category-description {
       padding: 1.5rem;
-      border-radius: 20px;
+      border-radius: var(--radius-md);
     }
   }
 

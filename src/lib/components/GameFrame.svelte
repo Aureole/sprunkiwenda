@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$lib/styles/theme.css';
   import type { GameBaseConfig } from "$lib/types";
   import siteConfig from "$lib/data/site.json";
   import { getCoverUrl, getIframeUrl } from "$lib/helper";
