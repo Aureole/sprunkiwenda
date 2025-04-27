@@ -1,0 +1,7 @@
+{
+  "id": "{{name}}",
+  "description": "Abgerny is a unique music creation game blending Aboriginal art and tribal sounds. Craft nature-inspired melodies with quirky characters and hidden soundscapes",
+  "title": "{{CamelCaseName}}",
+  "subtitle": "Explore Tribal Rhythms with Abgerny!",
+  "plays": {{plays}}
+}

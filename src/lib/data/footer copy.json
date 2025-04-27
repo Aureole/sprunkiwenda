@@ -1,0 +1,28 @@
+{
+  "copyright": "© 2025 Game Collection. All rights reserved.",
+  "links": [
+    { "title": "Privacy Policy", "href": "/privacy" },
+    { "title": "Terms of Use", "href": "/terms" },
+    { "title": "Contact", "href": "/contact" }
+  ],
+  "relatedGameLinks": [
+    {
+      "title": "Popular Categories",
+      "games": [
+        { "title": "Adventure Games", "href": "/category/adventure" },
+        { "title": "Puzzle Games", "href": "/category/puzzle" },
+        { "title": "Racing Games", "href": "/category/racing" },
+        { "title": "Strategy Games", "href": "/category/strategy" }
+      ]
+    },
+    {
+      "title": "Top Games",
+      "games": [
+        { "title": "Cube Runner", "href": "/game/cube-runner" },
+        { "title": "Puzzle Master", "href": "/game/puzzle-master" },
+        { "title": "Sky Adventure", "href": "/game/sky-adventure" },
+        { "title": "Space Explorer", "href": "/game/space-explorer" }
+      ]
+    }
+  ]
+}

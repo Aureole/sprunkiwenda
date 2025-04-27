@@ -1,0 +1,10 @@
+{
+  "trending": {
+    "title": "Trending Games",
+    "gameIds": ["sprunki-wenda-treatment"]
+  },
+  "popular": {
+    "title": "Popular Games",
+    "gameIds": ["sprunki-wenda-treatment"]
+  }
+}
