@@ -1,7 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
-    <loc>https://xxx.org/</loc>
+    <loc>https://sprunkiwenda.org/sprunki-brud-treatment</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-gray-treatment</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-incredibox</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-italian-brainrot</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-phase-777-3-7</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-raddy-treatment</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-retake</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-simons-realm</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/sprunki-swapped-retextured</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/terms-of-use</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://sprunkiwenda.org/privary-policy</loc>
     <changefreq>daily</changefreq>
   </url>
 </urlset>

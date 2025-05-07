@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync, unlinkSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync, unlinkSync, readdirSync, read } from 'fs';
 import { execSync } from 'child_process';
 import { join } from 'path';
 
@@ -112,6 +112,57 @@ function convertAllToWebp() {
   });
 }
 
+function generateSiteMap() {
+  const site = readFileSync('./src/lib/data/site.json', 'utf8');
+  const siteJson = JSON.parse(site);
+  const baseUrl = siteJson.baseUrl;
+
+  // generate sitemap.xml
+  const pagesDir = './static';
+  const configDir = './src/lib/data/games';
+  const categoriesDir = './src/lib/data/categories';
+  const games = readdirSync(configDir).filter(file => file.endsWith('.json'));
+  const urls = [];
+  games.forEach(file => {
+    const data = readFileSync(join(configDir, file), 'utf8');
+    const json = JSON.parse(data);
+    if (json.routeId === undefined) {
+      urls.push(`${baseUrl}/${json.id}`);
+    } else {
+      urls.push(`${baseUrl}/${json.routeId}`);
+    }
+  });
+  /*
+  const categories = readdirSync(categoriesDir).filter(file => file.endsWith('.json'));
+  categories.forEach(file => {
+    const data = readFileSync(join(categoriesDir, file), 'utf8');
+    const json = JSON.parse(data);
+    urls.push(`${baseUrl}/categories/${json.id}`);
+  });*/
+  // write the file to src/routes/sitemap.xml
+  writeFileSync(
+    join(pagesDir, 'sitemap.xml'),
+    `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  ${urls.map(url => `
+  <url>
+    <loc>${url}</loc>
+    <changefreq>daily</changefreq>
+  </url>`).join('')}
+  <url>
+    <loc>${baseUrl}/terms-of-use</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>${baseUrl}/privary-policy</loc>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>`,
+    'utf8'
+  );
+  console.log(`File created: ${pagesDir}/sitemap.xml`);
+}
+
 function main() {
   const argv = process.argv.slice(2);
   if (argv.length > 2 || argv.length < 1) { 
@@ -127,6 +178,8 @@ function main() {
   } else if (argv[0] === 'add') {
     const name = argv[1];
     scaffold(name);
+  } else if (argv[0] === 'sitemap') {
+    generateSiteMap();
   }
 }
 
