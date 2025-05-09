@@ -118,7 +118,7 @@
               <div class="game-card-image-container">
                 <img src={game.coverImage} alt={game.title} class="game-card-image" />
               </div>
-              <div class="game-card-title">{game.title}</div>
+              <div class="game-card-title" style="--title: '{game.title}'"></div>
             </a>
           {/each}
         </div>
@@ -245,6 +245,10 @@
 
   .game-card:hover .game-card-image {
     transform: scale(1.08);
+  }
+
+  .game-card-title::before {
+    content: var(--title);
   }
 
   .game-card-title {
