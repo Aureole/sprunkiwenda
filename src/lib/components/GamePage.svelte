@@ -11,6 +11,9 @@
   import gameCollections from '$lib/data/game-collections.json';
   import { getGameUrl, getCoverUrl, getSeoTitle } from '$lib/helper';
   import GoogleAnalytics from './GoogleAnalytics.svelte';
+  import MicrosoftClarify from "./MicrosoftClarify.svelte";
+  import GoogleAdsense from "./GoogleAdsense.svelte";
+  import GameJsonLd from "./GameJsonLd.svelte";
   
   export let config: GameConfig;
   
@@ -60,15 +63,6 @@
       height: 100%;
     }
   </style>
-  {#if siteConfig.microsoftClarityId}
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "rahuv2gc8i");
-    </script>
-  {/if}
 </svelte:head>
 
 <div class="app">
@@ -113,7 +107,13 @@
     <GoogleAnalytics measurementId={siteConfig.googleAnalyticsId} />
   {/if}
 </div>
-
+{#if siteConfig.microsoftClarityId}
+  <MicrosoftClarify clarifyId={siteConfig.microsoftClarityId}/>
+{/if}
+{#if siteConfig.googleAdClientId !== ""}
+  <GoogleAdsense adsenseId={siteConfig.googleAdClientId} />
+{/if}
+<GameJsonLd {config} />
 <style>
   .page-container {
     min-height: 100vh;
